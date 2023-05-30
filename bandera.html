@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #miCanvas{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bandera de Noruega</h1>
+    <canvas id="miCanvas" width="500px" height="300px">Tu navegador no soporta </canvas>
+    <script>
+        window.onload = function(){
+            var canvas = document.getElementById("miCanvas")
+
+            const BASE = 500;
+            const ALTURA =300;
+
+
+            canvas.width = BASE;
+            canvas.height = ALTURA;
+                        if(canvas && canvas.getContext){
+                var ctx = canvas.getContext("2d")
+                if (ctx){
+                    
+                    
+              
+                    //rectangulo que cubra medio canvas
+                    
+                    // ctx.fillRect(50,50,100,100)
+                     //rectangulo que cubra medio canvas
+                    ctx.fillStyle = 'white'
+                    ctx.fillRect(0,120,800,70);
+
+                    ctx.fillStyle = 'white'
+                    ctx.fillRect(140,0,80,400);
+
+                    ctx.fillStyle = 'blue'
+                    ctx.fillRect(155,0,50,400);
+
+                    ctx.fillStyle = 'blue'
+                    ctx.fillRect(0,132,500,45);
+                    
+                     
+
+                }
+                else{
+                    alert("Error al crear el contexto")
+                }
+            }
+
+        }
+    </script>
+</body>

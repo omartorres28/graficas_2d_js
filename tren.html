@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficas 2D JS</title>
+    <style>
+        #miCanvas {
+
+            background-color: #A4A4A4 ;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementById("miCanvas");
+
+            const BASE = 600;
+            const ALTURA = 500;
+
+            canvas.width = BASE ;
+            canvas.heigth = ALTURA ;
+            if (canvas && canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+                if (ctx)
+                 {
+                    // base del tren
+                    ctx.fillStyle = '#08088A'
+                    ctx.fillRect(147,150,230,110);
+
+                    // parte frontal
+                    ctx.fillStyle = '#B45F04'
+                    ctx.fillRect(102,145,30,120);
+
+                    // separador de frontal y base 
+                    ctx.fillStyle = '#B45F04'
+                    ctx.fillRect(132,160,15,90);
+
+                    // chimenea
+                    ctx.fillStyle = '#610B0B'
+                    ctx.fillRect(165,108,31,42);
+
+                    // chimenea tapa
+                    ctx.fillStyle = '#B45F04'
+                    ctx.fillRect(155,95,50,28);
+
+                    // cabina
+                    ctx.fillStyle = '#610B0B'
+                    ctx.fillRect(275,61,100,90);
+
+                     // cabina por dentro 
+                     ctx.fillStyle = '#01A9DB'
+                    ctx.fillRect(289,75,70,62);
+
+                    // techo
+                    ctx.fillStyle = '#3B0B0B'
+                    ctx.fillRect(260,33,130,28);
+
+                    // techo2
+                    ctx.fillStyle = '#3B0B0B'
+                    ctx.fillRect(275,14,100,28);
+
+                    // llanta 1
+                    ctx.fillStyle = "white";
+                    ctx.strokeStyle = "black"
+                    ctx.beginPath();
+                    ctx.lineWidth = 10;
+                    ctx.arc(190,280,38,Math.PI,3*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+                    // llanta 2
+                    ctx.fillStyle = "white";
+                    ctx.strokeStyle = "black"
+                    ctx.beginPath();
+                    ctx.lineWidth = 10;
+                    ctx.arc(275,280,38,Math.PI,3*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+                    // llanta 3
+                    ctx.fillStyle = "white";
+                    ctx.strokeStyle = "black";
+                    ctx.beginPath();
+                    ctx.lineWidth = 10;
+                    ctx.arc(360,280,38,Math.PI,3*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+                    //frenos
+                    ctx.strokeStyle = "black";
+                    ctx.beginPath();
+                    ctx.moveTo(190,280);
+                    ctx.lineTo(360,280);
+                    ctx.stroke();
+
+                    // cara
+                    ctx.fillStyle = "yellow";
+                    ctx.strokeStyle = "yellow";
+                    ctx.beginPath();
+                    ctx.lineWidth = 2;
+                    ctx.arc(324,105,30,Math.PI,3*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+                     // boca
+                     ctx.fillStyle = "red";
+                     ctx.strokeStyle = "yellow";
+                     ctx.beginPath();
+                     ctx.lineWidth = 2;
+                     ctx.arc(324,120,8,Math.PI,3*Math.PI, false);
+                     ctx.fill();
+                     ctx.stroke();
+
+                      // ojo 1
+                    ctx.fillStyle = "white";
+                    ctx.strokeStyle = "yellow";
+                    ctx.beginPath();
+                    ctx.lineWidth = 2;
+                    ctx.arc(312,100,9,Math.PI,3*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+                    // ojo fondo
+                    ctx.fillStyle = "#3B170B";
+                    ctx.strokeStyle = "black";
+                    ctx.beginPath();
+                    ctx.lineWidth = 1;
+                    ctx.arc(312,101,3,Math.PI,3*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+                    // ojo 2
+                    ctx.fillStyle = "white";
+                    ctx.strokeStyle = "yellow";
+                    ctx.beginPath();
+                    ctx.lineWidth = 2;
+                    ctx.arc(335,101,9,Math.PI,3*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+                    // ojo fonfo
+                    ctx.fillStyle = "#3B170B";
+                    ctx.strokeStyle = "BLACK";
+                    ctx.beginPath();
+                    ctx.lineWidth = 1;
+                    ctx.arc(334,101,3,Math.PI,3*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+                    
+                      //nombre
+                     ctx.font = "2em verdana"
+                     ctx.lineWidth = 1.0;
+                     ctx.fillStyle = "WHITE"
+                     ctx.strokeStyle = "yellow"
+                     //
+                     ctx.shadowColor = "black"
+                      ctx.shadowOffsetX = 5;
+                      ctx.shadowOffsetY = 5; 
+                     ctx.shadowBlur = 10;
+
+                     //
+                     ctx.fillText("ALEXANDER",170,220);
+                     ctx.strokeText("ALEXANDER",170,220);
+
+
+
+
+                  
+
+
+                 }
+                else {
+                    alert("Error al crear el contexto ");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Graficas 2D con html y JS</h1>
+    <canvas id="miCanvas" width="600px" height="400px">
+        .
+        tu navegador no soporta canvas
+    </canvas>
+
+</body>
+
+</html>

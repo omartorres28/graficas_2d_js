@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficas</title>
+    <style>
+        #miCanvas{
+           
+            background-color: rgb(196, 148, 241);
+        }
+        #canvas-container 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <script>
+        window.onload = function ()
+        {
+       
+            var canvas = document.getElementById("miCanvas");
+
+            const BASE = 500; 
+            const ALTURA = 300;
+
+            canvas.width = BASE;
+            canvas.height = ALTURA;
+            if (canvas && canvas.getContext)
+            {
+                var ctx = canvas.getContext("2d");
+                if (ctx)
+                {
+                    
+                    ctx.lineWidth = 10;
+
+                    //LINEA1
+                    ctx.strokeStyle = "AQUAMARIM";
+                    ctx.beginPath();
+                    ctx.moveTo(BASE/2,0);
+                    ctx.lineTo(BASE/2,ALTURA);
+                    ctx.stroke();
+
+                    //LINEA2
+                    ctx.strokeStyle = "Black";
+                    ctx.beginPath();
+                    ctx.moveTo(0,ALTURA/2);
+                    ctx.lineTo(BASE,ALTURA/2);
+                    ctx.stroke();
+
+                    //LINEA3
+                    ctx.strokeStyle = "blue";
+                    ctx.beginPath();
+                    ctx.moveTo(BASE/2,0);
+                    ctx.lineTo(BASE,ALTURA/2);
+                    ctx.stroke();
+
+                     //LINEA4
+                     ctx.strokeStyle = "RED";
+                    ctx.beginPath();
+                    ctx.moveTo(BASE,ALTURA/2,0);
+                    ctx.lineTo(BASE/2,ALTURA);
+                    ctx.stroke();
+                    
+                     //LINEA4
+                     ctx.strokeStyle = "YELLOW";
+                    ctx.beginPath();
+                    ctx.moveTo(BASE/2,0);
+                    ctx.lineTo(0,ALTURA/2);
+                    ctx.stroke();
+
+                     //LINEA4
+                     ctx.strokeStyle = "GREEN";
+                    ctx.beginPath();
+                    ctx.moveTo(0,ALTURA/2,0);
+                    ctx.lineTo(BASE/2,ALTURA);
+                    ctx.stroke();
+
+                     // Otro dibujo
+                     ctx.strokeStyle = "yellow";
+                    ctx.fillStyle = "yellow";
+                    ctx.beginPath();
+                    ctx.moveTo(0,ALTURA/2);
+                    ctx.lineTo(BASE/2,0)
+                    ctx.lineTo(BASE,ALTURA/2);
+                    ctx.fill();
+                    ctx.stroke()
+
+
+
+                }
+                   
+                else
+                 {
+                    alert("Error al crear el contexto ");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Graficas 2D con html y JS</h1>
+    <div id="canvas-container">
+        <canvas id="miCanvas">
+            Tu navegador no soporta canvas
+        </canvas>
+    </div>

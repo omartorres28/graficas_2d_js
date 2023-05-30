@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficas 2D JS</title>
+    <style>
+        #miCanvas{
+            
+            background-color: green;
+        }
+    </style>
+    <script>
+        window.onload = function ()
+        {
+            var canvas = document.getElementById("miCanvas");
+            
+            const BASE = 500;
+            const ALTURA = 300; 
+            if (canvas && canvas.getContext)
+            {
+                var ctx = canvas.getContext("2d");
+                if (ctx){
+                    
+                
+                    ctx.lineWidth = 10;
+                    ctx.fillStyle = "yellow"
+                    ctx.strokeStyle = "red"
+
+                    //primer cuadro
+                    ctx.fillRect(50,50,100,100);
+                    ctx.strokeRect(50,50,100,100);
+                    
+                    //guardamos el estado 
+                    ctx.save();
+
+                    // modificamos colores 
+                    ctx.fillStyle = "black";
+                    ctx.strokeStyle = "white";
+
+                    // segundo cuadro
+                    ctx.fillRect(200,50,100,100);
+                    ctx.strokeRect(200,50,100,100);
+
+                    //restauramos colores
+
+                    ctx.restore();
+
+                    // tercer cuadro 
+                    ctx.fillRect(350,50,100,100);
+                    ctx.strokeRect(350,50,100,100);
+
+                }
+                else {
+                    alert("Error al crear el contexto ");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Graficas 2D con html y JS</h1>
+    <canvas id="miCanvas" width="500px" height="300px">
+        .
+        tu navegador no soporta canvas 
+    </canvas>
+    
+</body>
+</html>

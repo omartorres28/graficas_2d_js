@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docccc</title>
+    <style>
+        #canvas-container 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Graficas 2D con HTML y Javascript</h1>
+    <canvas id="miCanvas" width="800px" height="300px">Tu navegador no soporta </canvas>
+    <script>
+        window.onload = function(){
+            var canvas = document.getElementById("miCanvas")
+
+            const BASE = 800;
+            const ALTURA =300;
+
+            canvas.width = BASE;
+            canvas.height = ALTURA;
+            if(canvas && canvas.getContext){
+                var ctx = canvas.getContext("2d")
+                if (ctx){
+
+
+                    ctx.lineWidth = 5;
+                    ctx.strokeStyle = "green";
+                    ctx.fillStyle = "#1E8449";
+
+                    //arco 1 
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(100,150,50,Math.PI,2*Math.PI, );
+                    ctx.fill();
+                    ctx.stroke();
+                    //arco 1 
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(100,150,50,Math.PI,2*Math.PI, true);
+                    ctx.fill();
+                    ctx.stroke();
+                    
+                    
+
+
+                    //arco 2 
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(200,150,50,Math.PI,2*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+                     //arco 2 
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(200,150,50,Math.PI,2*Math.PI, true);
+                    ctx.fill();
+                    ctx.stroke();
+          
+
+                    //arco 3 
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(300,150,50,Math.PI,2*Math.PI, true);
+                    ctx.fill();
+                    ctx.stroke();
+                  
+                     //arco 3 
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(300,150,50,Math.PI,2*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+                    //arco 4
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(400,150,50,Math.PI,2*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+                    //arco 4
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(400,150,50,Math.PI,2*Math.PI, true);
+                    ctx.fill();
+                    ctx.stroke();
+
+                     //arco 5
+                     ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(500,150,50,Math.PI,2*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+                     //arco 5
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(500,150,50,Math.PI,2*Math.PI, true);
+                    ctx.fill();
+                    ctx.stroke();
+          
+              
+                    //antenas
+                    ctx.strokeStyle = "GREEN";
+                    ctx.beginPath(2);
+                    ctx.moveTo(80,105);
+                    ctx.lineTo(180,70);
+                    ctx.stroke();
+                   
+                    //antenas
+                    ctx.strokeStyle = "GREEN";
+                    ctx.beginPath(2);
+                    ctx.moveTo(80,110);
+                    ctx.lineTo(180,5);
+                    ctx.stroke();
+
+                    //ojo 
+                    ctx.fillStyle = "white";
+                    ctx.strokeStyle = "black";
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(75,140,10,Math.PI,3*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+                     //ojo fondo
+                    ctx.fillStyle = "black";
+                    ctx.strokeStyle = "black";
+                    ctx.lineWidth = 0;
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.arc(72,140,1,Math.PI,3*Math.PI, false);
+                    ctx.fill();
+                    ctx.stroke();
+
+
+                     //boca
+                     ctx.strokeStyle = "black";
+                    ctx.beginPath(2);
+                    ctx.moveTo(62,170);
+                    ctx.lineTo(75,167);
+                    ctx.stroke();
+
+                    //cola
+                    ctx.strokeStyle = "black";
+                    ctx.beginPath(2);
+                    ctx.moveTo(600,150);
+                    ctx.lineTo(140,500);
+                    ctx.stroke();
+
+              
+              
+                   
+                }
+
+
+
+                }
+                else{
+                    alert("Error al crear el contexto")
+                }
+            }
+
+        
+    </script>
+</body>
+<head>
+    <body>
+        <div id="canvas-container">
+            <canvas id="miCanvas">
+                Tu navegador no soporta canvas
+            </canvas>
+        </div>
+
+    </body>
+</head>
+</html>
